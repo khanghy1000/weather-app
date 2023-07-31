@@ -26,6 +26,10 @@ const screenController = () => {
 	const wind = document.querySelector('[data-wind]');
 	const humidity = document.querySelector('[data-humidity]');
 
+	const dialog = document.querySelector('dialog');
+	const closeDialogBtn = document.querySelector('[data-form-close]');
+	closeDialogBtn.addEventListener('click', () => dialog.close());
+
 	form.addEventListener('submit', (e) => {
 		e.preventDefault();
 		const location = searchBar.value;
@@ -33,13 +37,17 @@ const screenController = () => {
 	});
 
 	async function updateScreen(input) {
-		let weather = await app.getWeather(input);
-		condition.textContent = weather.current.condition.text;
-		location.textContent = `${weather.location.name}, ${weather.location.country}`;
-		temp.textContent = weather.current.temp_c;
-		fellLike.textContent = `Feels like: ${weather.current.feelslike_c}`;
-		wind.textContent = `Wind: ${weather.current.wind_mph} mph`;
-		humidity.textContent = `Humidity: ${weather.current.humidity}%`;
+		try {
+			let weather = await app.getWeather(input);
+			condition.textContent = weather.current.condition.text;
+			location.textContent = `${weather.location.name}, ${weather.location.country}`;
+			temp.textContent = weather.current.temp_c;
+			fellLike.textContent = `Feels like: ${weather.current.feelslike_c}`;
+			wind.textContent = `Wind: ${weather.current.wind_mph} mph`;
+			humidity.textContent = `Humidity: ${weather.current.humidity}%`;
+		} catch (err) {
+			dialog.showModal();
+		}
 	}
 
 	updateScreen('Vietnam');
