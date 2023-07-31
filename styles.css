@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700;800;900&display=swap');
+
+body {
+	margin: 0;
+	height: 100vh;
+	height: 100svh;
+	background: url(./img/slava-auchynnikau-BUaeQu-UdFY-unsplash.jpg);
+	background-size: cover;
+	display: flex;
+	flex-direction: column;
+}
+
+* {
+	font-family: Montserrat;
+}
+
+.search-bar,
+.app,
+.footer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+a {
+	color: rgba(255, 255, 255, 0.7);
+}
+
+.search-bar {
+	box-sizing: border-box;
+	padding: 20px;
+	height: 15%;
+}
+
+input[type='text'] {
+	width: 400px;
+	height: 50px;
+	padding: 8px;
+	box-sizing: border-box;
+	font-weight: 500;
+	font-size: 1.2rem;
+	background: rgba(0, 0, 0, 0.2);
+	border: none;
+	outline: none;
+	border-radius: 14px;
+}
+
+input[type='text']::placeholder {
+	color: rgba(0, 0, 0, 0.5);
+}
+
+.app {
+	flex: 1 0 0;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr 1fr;
+	justify-content: center;
+	align-content: center;
+	text-transform: uppercase;
+	color: rgba(255, 255, 255, 0.7);
+	font-weight: 600;
+	gap: 40px;
+	margin-bottom: 10%;
+}
+
+.header {
+	grid-column: span 2;
+	align-self: end;
+	justify-self: center;
+	font-size: 1.5rem;
+}
+
+.header .location {
+	font-size: 2.5rem;
+}
+
+.temp {
+	align-self: start;
+	justify-self: end;
+	font-size: 5rem;
+	position: relative;
+	padding-right: 40px;
+}
+
+.temp::after {
+	content: '\00B0 C';
+	position: absolute;
+	font-size: 1.5rem;
+}
+
+.others {
+	align-self: start;
+	justify-self: start;
+	font-size: 1.5rem;
+}
+
+.footer {
+	height: 50px;
+	color: rgba(255, 255, 255, 0.7);
+	font-weight: 600;
+}
