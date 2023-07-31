@@ -45,6 +45,7 @@ const screenController = () => {
 			fellLike.textContent = `Feels like: ${weather.current.feelslike_c}`;
 			wind.textContent = `Wind: ${weather.current.wind_mph} mph`;
 			humidity.textContent = `Humidity: ${weather.current.humidity}%`;
+			searchBar.value = '';
 		} catch (err) {
 			dialog.showModal();
 		}
