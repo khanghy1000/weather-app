@@ -94,8 +94,15 @@ input[type='text']::placeholder {
 	font-size: 1.5rem;
 }
 
+.feel-like::after {
+	content: '\00B0 C';
+	position: absolute;
+	font-size: 1rem;
+}
+
 .footer {
 	height: 50px;
 	color: rgba(255, 255, 255, 0.7);
 	font-weight: 600;
+	text-align: center;
 }
